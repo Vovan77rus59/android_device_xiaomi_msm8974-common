@@ -1,4 +1,5 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+# Device was launched with k
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
 
 # call the proprietary setup
 $(call inherit-product, vendor/xiaomi/msm8974-common/msm8974-common-vendor.mk)
@@ -6,18 +7,18 @@ $(call inherit-product, vendor/xiaomi/msm8974-common/msm8974-common-vendor.mk)
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
 
+# Device uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
-# Device uses ultra-high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-mokee
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
@@ -256,7 +257,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-service.mokee
+    android.hardware.vibrator@1.0-service.lineage
 
 # WiFi
 PRODUCT_COPY_FILES += \

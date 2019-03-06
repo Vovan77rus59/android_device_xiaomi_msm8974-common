@@ -123,9 +123,9 @@ BOARD_KERNEL_BASE                  := 0x00000000
 BOARD_KERNEL_PAGESIZE              := 2048
 BOARD_KERNEL_IMAGE_NAME            := zImage
 BOARD_MKBOOTIMG_ARGS               := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
-TARGET_KERNEL_SOURCE               := kernel/xiaomi/virgo
+TARGET_KERNEL_SOURCE               := kernel/xiaomi/msm8974
 TARGET_KERNEL_ARCH                 := arm
-TARGET_KERNEL_CONFIG               := virgo_defconfig
+TARGET_KERNEL_CONFIG               := cancro_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 BOARD_DTBTOOL_ARGS                 := -2
 
@@ -156,7 +156,11 @@ BOARD_USES_QCOM_HARDWARE            := true
 
 # Radio
 TARGET_RIL_VARIANT                := caf
+TARGET_USES_OLD_MNC_FORMAT := true
 FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
+
+# Security patch level
+VENDOR_SECURITY_PATCH := 2019-02-01
 
 # Recovery
 RECOVERY_FSTAB_VERSION             := 2
@@ -164,9 +168,6 @@ TARGET_RECOVERY_DENSITY            := xhdpi
 TARGET_RECOVERY_FSTAB              := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT       := "RGBX_8888"
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
-
-# Security patch level
-VENDOR_SECURITY_PATCH := 2017-06-01
 
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
@@ -194,16 +195,5 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 TARGET_PROVIDES_WCNSS_QMI        := true
 TARGET_USES_QCOM_WCNSS_QMI       := true
 TARGET_USES_WCNSS_CTRL           := true
-
-# Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),user)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-    endif
-  endif
-endif
-DONT_DEXPREOPT_PREBUILTS := true
 
 -include vendor/xiaomi/msm8974-common/BoardConfigVendor.mk
