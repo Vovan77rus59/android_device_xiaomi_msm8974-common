@@ -99,6 +99,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true \
     persist.timed.enable=true \
     persist.sys.wfd.virtual=0 \
+    hwui.debug.renderer=opengl
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.cpp.duplication=false \
