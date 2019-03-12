@@ -105,7 +105,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1 \
     camera.disable_treble=true \
     debug.hwui.use_buffer_age=false \
-    vendor.camera.hal1.packagelist=com.whatsapp,com.intsig.camscanner,com.facebook.katana,com.instagram.android,com.snapchat.android
+    vendor.camera.hal1.packagelist=com.whatsapp,com.intsig.camscanner \
+    vendor.camera.hal1.packagelist=com.facebook.katana,com.instagram.android,com.snapchat.android
 
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=smd \
