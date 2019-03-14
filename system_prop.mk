@@ -98,8 +98,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196609 \
     persist.hwc.mdpcomp.enable=true \
     persist.timed.enable=true \
-    persist.sys.wfd.virtual=0 \
-    hwui.debug.renderer=opengl
+    persist.sys.wfd.virtual=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.cpp.duplication=false \
