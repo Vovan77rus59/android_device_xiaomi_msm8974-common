@@ -39,6 +39,11 @@ TARGET_CPU_ABI2     := armeabi
 TARGET_CPU_SMP      := true
 TARGET_CPU_VARIANT  := krait
 
+TARGET_USES_64_BIT_BINDER := true
+
+# SD Clang
+TARGET_USE_SDCLANG := true
+
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
@@ -160,7 +165,7 @@ TARGET_USES_OLD_MNC_FORMAT := true
 FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2019-03-01
+VENDOR_SECURITY_PATCH := 2019-04-01
 
 # Recovery
 RECOVERY_FSTAB_VERSION             := 2
