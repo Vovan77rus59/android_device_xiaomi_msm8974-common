@@ -31,7 +31,7 @@ static inline const char* BtmGetDefaultName()
     property_get("ro.product.device", product_device, "");
 
     if (strstr(product_device, "cancro"))
-        return "Xiaomi MI3W";
+        return "Xiaomi MI 4LTE";
     if (strstr(product_device, "virgo"))
         return "Xiaomi Note LTE";
 
